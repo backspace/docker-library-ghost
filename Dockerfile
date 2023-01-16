@@ -116,8 +116,8 @@ RUN set -eux; \
 	gosu node yarn cache clean; \
 	gosu node npm cache clean --force; \
 	npm cache clean --force; \
-	rm -rv /tmp/yarn* /tmp/v8*
-
+	rm -rv /tmp/yarn* /tmp/v8* \
+	\
 	sed -i s/1000/10/ ./versions/5.30.0/node_modules/@tryghost/email-service/lib/mailgun-email-provider.js
 
 WORKDIR $GHOST_INSTALL
