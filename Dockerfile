@@ -118,6 +118,8 @@ RUN set -eux; \
 	npm cache clean --force; \
 	rm -rv /tmp/yarn* /tmp/v8*
 
+	sed -i s/1000/10/ ./versions/5.30.0/node_modules/@tryghost/email-service/lib/mailgun-email-provider.js
+
 WORKDIR $GHOST_INSTALL
 VOLUME $GHOST_CONTENT
 
