@@ -116,7 +116,7 @@ RUN set -eux; \
 	gosu node yarn cache clean; \
 	gosu node npm cache clean --force; \
 	npm cache clean --force; \
-	sed s/"Processing email batch"/"Processing email batch with size ' + MailgunClient.BATCH_SIZE + '"/ /var/lib/ghost/versions/5.30.0/core/server/services/bulk-email/bulk-email-processor.js; \
+	sed -i s/"Processing email batch"/"Processing email batch with size ' + MailgunClient.BATCH_SIZE + '"/ /var/lib/ghost/versions/5.30.0/core/server/services/bulk-email/bulk-email-processor.js; \
 	sed -i s/1000/5/ /var/lib/ghost/versions/5.30.0/node_modules/@tryghost/email-service/lib/mailgun-email-provider.js; \
 	rm -rv /tmp/yarn* /tmp/v8*
 
